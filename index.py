@@ -1,6 +1,11 @@
 import discord
 import wavelink
 from discord.ext import commands
+import json
+
+with open("config.json", "r", encoding="utf8") as f:
+    data = json.load(f)
+    TOKEN = data["TOKEN"]
 
 
 class Bot(commands.Bot):
@@ -76,4 +81,4 @@ class Music(commands.Cog):
         )
 
 
-Bot().run("NjkwMDUxODkxMzQxNjg4ODU3.XnLy5w.AeNomrXD0kkAZxYwjhUzyafl8XY")
+Bot().run(TOKEN)
